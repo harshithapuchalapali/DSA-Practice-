@@ -1,0 +1,23 @@
+target : 9
+input: 2 7 9 11
+Output: [0,1]
+Explanation:
+Running sum: 2+7 =9 7+9=16 9+11=20 
+             taget =9 so return index of two numbers sum ie, 0,1
+
+solution :
+
+def twoSum(nums, target):
+    count = []
+    for i in range(len(nums) - 1):
+        ans = nums[i] + nums[i + 1]
+
+        if ans == target:
+            count.append(i)
+            count.append(i + 1)
+    return count
+
+target = int(input("target :))
+nums = list(map(int, input().split()))
+
+print(twoSum(nums, target))

@@ -1,0 +1,14 @@
+Output: [[1,0,0],[0,1,0],[1,1,1]]
+Explanation: First reverse each row: [[0,1,1],[1,0,1],[0,0,0]].
+Then, invert the image: [[1,0,0],[0,1,0],[1,1,1]]
+
+solution :
+
+image = [[1,1,0],[1,0,1],[0,0,0]]
+result = []
+
+for row in image:
+    row = row[::-1]      # Flip
+    row = [1 - x for x in row]  # Invert
+    result.append(row)
+print(result)

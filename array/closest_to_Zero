@@ -1,0 +1,14 @@
+Input: nums = [-4,-2,1,4,8]
+Output: 1
+
+solution :
+def closes_num(nums):
+  closest=nums[0]
+  for num in nums :
+      if abs(num) < abs(closest): 
+          closest = num 
+      elif abs(num) == abs(closest) and num > closest: 
+          closest = num
+  return closest
+nums=list(map(int,input().split()))
+print(closest_num(nums))

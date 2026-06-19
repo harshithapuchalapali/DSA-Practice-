@@ -1,0 +1,22 @@
+problem
+Given sorted arrays nums1 (with m real elements + n zeros) and nums2 (n elements), merge them in-place into nums1 in non-decreasing order.
+
+Example  
+Input: nums1=[1,2,3,0,0,0] m=3, nums2=[2,5,6] n=3
+Output:[1,2,2,3,5,6]
+
+solution:
+def merge_array(num1,m,num2,n):
+  p1,p2,p=m-1,n-1,m+n-1
+  while p1>0 and p2>0:
+    if num1[p1]>num2[p2]:
+      num1[p]==num1[p1]
+      p1-=1
+    else:
+      num1[p]==num2[p2]
+      p2-=1
+    p-=1
+  nums1[:p2+1] = nums2[:p2+1]
+# As the last line indicates if the loop 1 is exhausted by searching then inorder to add elements at the starting
+  
+  

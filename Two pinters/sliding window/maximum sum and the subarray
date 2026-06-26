@@ -1,0 +1,26 @@
+Maximum Sum: 12
+Subarray: [3, 4, 5]
+
+solution:
+def max_sum_subarray(nums, k):
+    window_sum = sum(nums[:k])
+    maximum = window_sum
+    start = 0
+
+    for right in range(k, len(nums)):
+        window_sum = window_sum - nums[right - k]
+        window_sum = window_sum + nums[right]
+
+        if window_sum > maximum:
+            maximum = window_sum
+            start = right - k + 1
+
+    return maximum, nums[start:start + k]
+
+
+nums = [1, 2, 3, 4, 5]
+k = 3
+
+max_sum, subarray = max_sum_subarray(nums, k)
+print("Maximum Sum:", max_sum)
+print("Subarray:", subarray)

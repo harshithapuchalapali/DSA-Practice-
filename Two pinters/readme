@@ -1,0 +1,38 @@
+What is the Two Pointers technique?
+Two Pointers is an algorithmic technique that uses two indices to traverse an array, string, or linked list efficiently. 
+It reduces unnecessary comparisons and often improves the time complexity from O(n²) to O(n) while using O(1) extra space.
+
+When do we use Two Pointers?
+Use it when:
+Sorted arrays
+Pair or triplet sum problems
+Palindrome checking
+Remove duplicates
+Sliding window problems
+Linked list traversal
+
+3. Types of Two Pointers
+
+1. Opposite Direction
+One pointer starts at the beginning and the other at the end.
+Used for sorted arrays, pair sum, palindrome, 3Sum.
+
+2. Fast & Slow Pointers
+Both pointers move in the same direction, but one moves faster.
+Used for remove duplicates, move zeros, linked list cycle, middle node.
+
+3. Sliding Window
+Two pointers create a variable-size window.
+Used for longest substring, minimum/maximum subarray.
+
+4. Fixed Window
+Two pointers maintain a fixed-size window.
+Used for maximum sum or average of K elements.
+
+5. Partitioning (Dutch National Flag)
+Multiple pointers divide the array into sections.
+Used for Sort Colors and Quick Sort partitioning.
+
+4. Time Complexity
+Time: O(n)
+Space: O(1)

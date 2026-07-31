@@ -1,0 +1,26 @@
+Three Pointers:
+Three Pointers is an extension of the two-pointers technique where we use three indices to solve problems more efficiently.
+It is commonly used when tracking three positions, partitioning arrays, or finding triplets.
+
+When do we use Three Pointers?
+3Sum (find triplets with a target sum)
+Sort Colors (Dutch National Flag)
+Merge or partition arrays
+Problems involving three groups or three positions
+
+Types
+1. Fixed + Two Pointers
+Fix one element, then use two pointers to find the remaining two.
+Example: 3Sum
+Time Complexity: O(n²)
+
+2. Three Moving Pointers (Partitioning)
+Three pointers (low, mid, high) divide the array into sections.
+Example: Sort Colors (Dutch National Flag)
+Time Complexity: O(n)
+
+Interview Answer :
+
+Three Pointers is a technique that uses three indices to solve problems efficiently. 
+It is mainly used for triplet-sum problems and array partitioning. 
+The two common patterns are Fixed + Two Pointers (used in 3Sum) and Three Moving Pointers (used in Sort Colors/Dutch National Flag).

@@ -1,0 +1,65 @@
+Input
+h = [3, 6, 8, 7, 6]
+l = [1, 5, 4, 5, 3]
+Output
+20
+Explanation
+
+One optimal choice is:
+
+Day 1 → High-effort = 3
+Day 2 → Low-effort  = 5
+Day 3 → Low-effort  = 4
+Day 4 → Low-effort  = 5
+Day 5 → Low-effort  = 3
+
+Total:
+
+3 + 5 + 4 + 5 + 3 = 20
+
+Although high-effort tasks give more tasks on some days, choosing one means the previous day must be empty. 
+Therefore, we need to compare both possibilities.
+
+Dynamic Programming (1D DP)
+
+At every day, we have two important choices:
+
+1. Choose Low-Effort
+We can perform a low-effort task even if we worked yesterday.
+dp[i - 1] + l[i]
+  
+2. Choose High-Effort
+If we perform a high-effort task today, yesterday must be empty.
+Therefore:
+dp[i - 2] + h[i]
+
+So:
+
+dp[i] = max(dp[i - 1] + l[i],
+            dp[i - 2] + h[i])
+  
+📝 Python Solution
+  
+class Solution:
+    def maxTask(self, h: list[int], l: list[int]) -> int:
+        n = len(h)
+
+        if n == 1:
+            return max(h[0], l[0])
+
+        dp = [0] * n
+
+        dp[0] = max(h[0], l[0])
+
+        dp[1] = max(
+            dp[0] + l[1],
+            h[1]
+        )
+
+        for i in range(2, n):
+            easy = dp[i - 1] + l[i]
+            hard = dp[i - 2] + h[i]
+
+            dp[i] = max(easy, hard)
+
+        return dp[n - 1]

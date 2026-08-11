@@ -29,6 +29,7 @@ dp[i - 1] + l[i]
   
 2. Choose High-Effort
 If we perform a high-effort task today, yesterday must be empty.
+
 Therefore:
 dp[i - 2] + h[i]
 

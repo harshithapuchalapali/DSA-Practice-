@@ -7,7 +7,7 @@ solution :
 
 class Solution:
     def validPalindrome(self, s: str) -> bool:
-        def palindrome(l,r):
+        def palindrome(l,r):  # helper function 
             while l < r:
                 if s[l]!=s[r]:
                     return False

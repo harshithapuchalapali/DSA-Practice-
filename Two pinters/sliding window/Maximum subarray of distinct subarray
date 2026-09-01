@@ -9,3 +9,60 @@ Explanation: The subarrays of nums with length 3 are:
 We return 15 because it is the maximum subarray sum of all the subarrays that meet the conditions
 
 solution :
+
+class Solution:
+    def maximumSubarraySum(self, nums, k):
+        left = 0
+        curr_sum = 0
+        max_sum = 0
+        freq = {}
+
+        for right in range(len(nums)):
+            # Add right element
+            curr_sum += nums[right]
+            freq[nums[right]] = freq.get(nums[right], 0) + 1
+
+            # Keep window size = k
+            if right - left + 1 > k:
+                freq[nums[left]] -= 1
+                curr_sum -= nums[left]
+
+                if freq[nums[left]] == 0:
+                    del freq[nums[left]]
+
+                left += 1
+
+            # Window has k distinct elements
+            if right - left + 1 == k and len(freq) == k:
+                max_sum = max(max_sum, curr_sum)
+
+        return max_sum
+
+( or )
+
+class Solution:
+    def maximumSubarraySum(self, nums: List[int], k: int) -> int:
+        n = len(nums)
+        window_sum = sum(nums[:k])
+        freq = {}
+
+        for x in nums[:k]:
+            freq[x] = freq.get(x, 0) + 1
+        max_sum = window_sum if len(freq) == k else 0
+
+        for i in range(k, n):
+            window_sum += nums[i] - nums[i-k]
+            # Add new element
+            freq[nums[i]] = freq.get(nums[i], 0) + 1
+
+            # Remove old element
+            freq[nums[i-k]] -= 1
+
+            if freq[nums[i-k]] == 0:
+                del freq[nums[i-k]]
+
+            # Check distinct
+            if len(freq) == k:
+                max_sum = max(max_sum, window_sum)
+
+        return max_sum

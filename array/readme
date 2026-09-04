@@ -1,15 +1,16 @@
 Python Arrays – Quick Revision Notes
+
 Array: A linear data structure that stores homogeneous (same data type) elements.
 Memory: Elements are stored in contiguous memory locations.
 Indexing: Starts from 0.
 Purpose: Store and access multiple values efficiently.
 
-Types of Arrays in Python
+Types of Arrays in Python :
 List – Stores mixed data types, dynamic, most commonly used.
 array module – Stores only one data type, memory-efficient.
 NumPy Array – Fast numerical and multi-dimensional computations.
 
-Creating an Array
+Creating an Array :
 import array
 a = array.array('i', [1, 2, 3])
 'i' → Integer typecode.
@@ -28,17 +29,17 @@ reverse() → Reverse the array.
 extend(iterable) → Add multiple elements.
 a[start:end] → Slice the array.
 
-Advantages
+Advantages :
 Faster index-based access (O(1)).
 Memory-efficient (using the array module).
 Good for storing numerical data.
 
-When to Use
+When to Use :
 List → General programming.
 array module → Homogeneous data with better memory efficiency.
 NumPy → Data Science, Machine Learning, and mathematical operations.
 
-Interview Keywords
+Interview Keywords :
 ✅ Homogeneous data
 ✅ Contiguous memory
 ✅ Index starts at 0

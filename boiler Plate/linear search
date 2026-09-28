@@ -1,0 +1,13 @@
+linear search: use n very small and the array unsorted 
+
+arr = [10, 20, 30, 40, 50]
+target = 30
+
+solution:
+
+class Solution:
+    def search(self, arr, target):
+        for i in range(len(arr)):
+            if arr[i] == target:
+                return i
+        return -1

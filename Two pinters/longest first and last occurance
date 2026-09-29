@@ -1,0 +1,30 @@
+k = [10,20,30,30,30,40,50,30,30,30,30,30,50,10,10]
+output: [7 12]
+
+solution :
+
+left = 0
+right = 0
+
+max_start = 0
+max_end = 0
+
+while right < len(k):
+
+    if k[right] == k[left]:
+        right += 1
+
+    else:
+        if right - left > max_end - max_start:
+            max_start = left
+            max_end = right
+
+        left = right
+
+if right - left > max_end - max_start:
+    max_start = left
+    max_end = right
+
+#print(k[max_start:max_end])
+#print("Element:", k[max_start])
+print(max_start, max_end)

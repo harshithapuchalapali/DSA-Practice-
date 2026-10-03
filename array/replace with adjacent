@@ -1,0 +1,21 @@
+output: [10, 70, 280, 168, 24]
+
+solution:
+arr = [2, 5, 7, 8, 3]
+n = len(arr)
+
+prev = 1
+
+for i in range(n):
+    current = arr[i]
+
+    if i == n - 1:
+        next_val = 1
+    else:
+        next_val = arr[i + 1]
+
+    arr[i] = prev * current * next_val
+
+    prev = current
+
+print(arr)

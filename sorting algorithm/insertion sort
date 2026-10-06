@@ -1,4 +1,6 @@
 definition : You pick up one card at a time and slide it into the right spot among the cards you already hold.
+time : o(n^2)
+space : o(1)
 
 [2 5 9 1] →[2 5 9 9] →[2 5 5 9] →[2 2 5 9] → [1 2 5 9]
 

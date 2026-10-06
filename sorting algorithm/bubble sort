@@ -1,4 +1,7 @@
 definition : Walk down the line. If two neighbors are in the wrong order, they swap.
+time : o(n^2)
+space : o(1)
+
 [5 2 9 1] → [2 5 1 9] → [2 1 5 9] → [1 2 5 9]
 
 def bubble_sort(a):

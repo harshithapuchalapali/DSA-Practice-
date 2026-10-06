@@ -1,4 +1,6 @@
 definition : Scan the whole line, pick the shortest person, and send them to the front.
+time : o(n^2)
+space : o(1)
 
 [5 2 9 1]  → [1 5 9 2] → [1 2 9 5] → [1 2 5 9]
 

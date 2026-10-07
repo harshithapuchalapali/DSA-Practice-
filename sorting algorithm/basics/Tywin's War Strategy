@@ -1,0 +1,28 @@
+Input: arr[] = [3, 5, 6, 7, 9, 10], k = 4
+Output: 4
+
+Explanation: We need at least 3 lucky troops since ⌈ 6 / 2 ⌉ = 3.
+Currently, no troop is divisible by 4.
+Add 1 soldier for troop 3 → 4,
+Add 2 for troop 6 → 8,
+Add 1 for troop 7 → 8.
+New array: [4, 5, 8, 8, 9, 10] with 3 lucky troops (4, 8, 8).
+Total soldiers added = 4.
+       
+arr = [3, 5, 6, 7, 9, 10]
+k = 4
+n = len(arr)
+need = (n + 1) // 2
+costs = []
+
+for num in arr:
+    if num % k == 0:
+        costs.append(0)
+    else:
+        costs.append(k - (num % k))
+
+#print(costs) -> [1, 3, 2, 1, 3, 2] 
+
+costs.sort()
+total=sum(costs[:need])
+print(total)
